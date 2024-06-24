@@ -1,5 +1,7 @@
-# sys is a module. It lets us access command line arguments, which are
-# stored in sys.argv.
+#Possible future upgrades I'd like explore: 
+    #Including the definition of the word in either the question or the answer
+    #Including info in the answer about what part of it usually indicates feminine or masculine in the French language
+
 import sys
 import random
 
@@ -20,7 +22,7 @@ for line in f:
 
 f.close()
 
-print("Welcome to the flashcard quizzer.")
+print("Welcome to the flashcard quizzer.  You will be shown a French noun and asked if it is feminine or masculine.  Answer with 'f' or 'm'.")
 print("At any time, type 'quit' to quit.")
 print("")
 
@@ -30,30 +32,34 @@ while True:
     question = random.choice(questions)
     answer = question_dict[question]
 
-    print("Question: " + question)
-    user_input = input("Your gender guess: f or m? ")
+    print("Question: Is " + question + " feminine or masculine?")
+    user_input = input("Your guess: ")
     if user_input == "quit":
-        print("Thanks for playing! Au revoir.")
+        print("Thanks for playing!  Au revoir!\nCredit for the original code goes to Jessica McKellar as part of her 'Introduction to Python' course at learning.oreilly.com.  Much gratitude goes to her for encouraging us to use this and adapt it.")
         break
     elif user_input == answer: #Entered correct answer
         if answer == "f": #Word is feminine
             for letter in question:
                 if letter[0] in "aehiouy":
-                    print("Correct! Une " + question + " or L'" + question)
+                    print("")
+                    print("Correct! une " + question + ", l'" + question)
                     print("")
                     break
                 else:
-                    print("Correct! Une " + question + " or La " + question)
+                    print("")
+                    print("Correct! une " + question + ", la " + question)
                     print("")
                     break
         else: #Word is masculine
             for letter in question:
                 if letter[0] in "aehiouy":
-                    print("Correct! Un " + question + " or L'" + question)
+                    print("")
+                    print("Correct! un " + question + ", l'" + question)
                     print("")
                     break
                 else:
-                    print("Correct! Un " + question + " or Le " + question)
+                    print("")
+                    print("Correct! un " + question + ", le " + question)
                     print("")
                     break
 
@@ -61,21 +67,25 @@ while True:
         if answer == "f": #Word is feminine
             for letter in question:
                 if letter[0] in "aehiouy":
-                    print("Sorry, the answer was: " + answer + ". Une " + question + " or L'" + question)
+                    print("")
+                    print("Sorry, the answer was " + answer + ": une " + question + ", l'" + question)
                     print("")
                     break
                 else:
-                    print("Sorry, the answer was: " + answer + ". Une " + question + " or La " + question)
+                    print("")
+                    print("Sorry, the answer was " + answer + ": une " + question + ", la " + question)
                     print("")
                     break
         else: #Word is masculine
             for letter in question:
                 if letter[0] in "aehiouy":
-                    print("Sorry, the answer was: " + answer + ". Un " + question + " or L'" + question)
+                    print("")
+                    print("Sorry, the answer was " + answer + ": un " + question + ", l'" + question)
                     print("")
                     break
                 else:
-                    print("Sorry, the answer was: " + answer + ". Un " + question + " or Le " + question)
+                    print("")
+                    print("Sorry, the answer was " + answer + ": un " + question + ", le " + question)
                     print("")
                     break
 
