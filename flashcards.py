@@ -31,24 +31,51 @@ while True:
     answer = question_dict[question]
 
     print("Question: " + question)
-    user_input = input("Your guess: ")
+    user_input = input("Your gender guess: f or m? ")
     if user_input == "quit":
-        print("Thanks for playing! Goodbye.")
+        print("Thanks for playing! Au revoir.")
         break
-    elif user_input == answer:
-        if answer == "f":
-            print("Correct! Une " + question)
-            print("")
-        else:
-            print("Correct! Un " + question)
-            print("")
-        #print("Correct!")
-    else:
-        if answer == "f":
-            print("Sorry, the answer was: " + answer + ". Une " + question)
-            print("")
-        else:
-            print("Sorry, the answer was: " + answer + ". Un " + question)
-            print("")
-        #print("Sorry, the answer was: " + answer)
+    elif user_input == answer: #Entered correct answer
+        if answer == "f": #Word is feminine
+            for letter in question:
+                if letter[0] in "aehiouy":
+                    print("Correct! Une " + question + " or L'" + question)
+                    print("")
+                    break
+                else:
+                    print("Correct! Une " + question + " or La " + question)
+                    print("")
+                    break
+        else: #Word is masculine
+            for letter in question:
+                if letter[0] in "aehiouy":
+                    print("Correct! Un " + question + " or L'" + question)
+                    print("")
+                    break
+                else:
+                    print("Correct! Un " + question + " or Le " + question)
+                    print("")
+                    break
+
+    else: #Entered incorrect answer
+        if answer == "f": #Word is feminine
+            for letter in question:
+                if letter[0] in "aehiouy":
+                    print("Sorry, the answer was: " + answer + ". Une " + question + " or L'" + question)
+                    print("")
+                    break
+                else:
+                    print("Sorry, the answer was: " + answer + ". Une " + question + " or La " + question)
+                    print("")
+                    break
+        else: #Word is masculine
+            for letter in question:
+                if letter[0] in "aehiouy":
+                    print("Sorry, the answer was: " + answer + ". Un " + question + " or L'" + question)
+                    print("")
+                    break
+                else:
+                    print("Sorry, the answer was: " + answer + ". Un " + question + " or Le " + question)
+                    print("")
+                    break
 
