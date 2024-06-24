@@ -36,8 +36,19 @@ while True:
         print("Thanks for playing! Goodbye.")
         break
     elif user_input == answer:
-        print("Correct!")
+        if answer == "f":
+            print("Correct! Une " + question)
+            print("")
+        else:
+            print("Correct! Un " + question)
+            print("")
+        #print("Correct!")
     else:
-        print("Sorry, the answer was: " + answer)
-
+        if answer == "f":
+            print("Sorry, the answer was: " + answer + ". Une " + question)
+            print("")
+        else:
+            print("Sorry, the answer was: " + answer + ". Un " + question)
+            print("")
+        #print("Sorry, the answer was: " + answer)
 
